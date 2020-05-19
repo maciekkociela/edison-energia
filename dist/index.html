@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Edison Calculator Widget</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Prompt:300,400,500&amp;display=swap&amp;subset=latin-ext'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="calculator-widget">
+        <div class="container">
+            <div class="cols-wrap">
+                <div class="col-left ">
+                    <div class="controls-wrap">
+                        <div class="control-wrap control-1">
+                            <h3 class="heading">Twój miesięczny rachunek za prąd</h3>
+                            <div class="wrap" style="--min: 100; --max: 1000; --val: 200;">
+                                <input id="rangeInputPrice" type="range" min="100" max="1000" value="200"/>
+                                <output for="rangeInputPrice">250 zł</output>
+                            </div>
+                        </div>
+                        <div class="control-wrap control-1">
+                            <h3 class="heading">Roczny wzrost cen prądu</h3>
+                            <div class="wrap" style="--min: 0;--max: 10;--val: 3,5;">
+                                <input id="rangeInputPriceIncrease" type="range" min="0" max="10" value="3.5" step="0.5"/>
+                                <output for="rangeInputPriceIncrease" class="">3.5 %</output>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-right">
+                    <div class="chart-container">
+                        <div class="chart-wrapper">
+                            <canvas id="myChart" data-calculator="{
+                                                        &quot;calc_moc&quot;:&quot;310&quot;,
+                                                        &quot;calc_bnp_percent&quot;:&quot;0.37&quot;,
+                                                        &quot;calc_installments&quot;:&quot;120&quot;,
+                                                        &quot;calc_assembly_fee_8&quot;:&quot;1900&quot;,
+                                                        &quot;calc_assembly_fee_23&quot;:&quot;2100&quot;,
+                                                        &quot;calc_installation_price_10&quot;:&quot;4900&quot;,
+                                                        &quot;calc_installation_price_20&quot;:&quot;4500&quot;,
+                                                        &quot;calc_installation_price_50&quot;:&quot;4300&quot;,
+                                                        &quot;calc_insurance&quot;:&quot;3&quot;,
+                                                        &quot;calc_monitoring&quot;:&quot;2&quot;,
+                                                        &quot;calc_warranty&quot;:&quot;8&quot;,
+                                                        &quot;calc_full_black&quot;:&quot;150&quot;
+                                                    }"></canvas>
+                            <div class="winner-plan">
+                                <p class="winner-plan-value">
+                                    <span class="" data-winner-value></span>
+                                    <small>/m-c</small>
+                                </p>
+                                <p class="winner-plan-name m-0" data-winner></p>
+                            </div>
+                            <div class="guaranteed-savings-col-label">
+                                <span class="heading">Gwarantowana<br/>oszczędność:</span>
+                                <span class="value"></span>
+                            </div>
+                            <span class="y-label">zł</span>
+
+                            <div class="chart-legend color-light">
+                                <p class=""><span class="symbol background-light"></span>Gwarantowana
+                                    oszczędność</p>
+                                <p class=""><span class="symbol background-secondary"></span>plan Edison
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bottom-label">
+                            <h4 class="heading">Prognozowany zwrot kosztów instalacji</h4>
+                            <div class="segments-wrap">
+                                <div class="segment segment-1">
+                                    <div class="segment-bar">5000 pln
+                                        <span class="segment-icon">+</span>
+                                    </div>
+                                    <div class="segment-desc">dotacja<br/>"Mój Prąd"</div>
+                                </div>
+                                <div class="segment segment-2">
+                                    <div class="segment-bar">16 000 pln
+                                        <span class="segment-icon">=</span></div>
+                                    <div class="segment-desc">ulga<br>termomodernizacyjna</div>
+
+                                </div>
+                                <div class="segment segment-3">
+                                    <div class="segment-bar">21 000 pln</div>
+                                    <div class="segment-desc">prognozowany<br>zwrot</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row-bottom">
+                <div class="savings-box">
+                    <h3 class="heading">Gwarantowana oszczędność:</h3>
+                    <span class="saving-box-value " data-savings></span>
+                    <div class="button button-full button-secondary">
+                        <button type="button" data-open-modal="{
+ &quot;subject&quot;:&quot;Zamawiam bezpłatną analizę&quot;,
+ &quot;originPage&quot;:&quot;Edison&quot;
+ }">Zamów bezpłatną analizę
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
